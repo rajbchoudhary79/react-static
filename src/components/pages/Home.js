@@ -23,7 +23,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import functions from "../../config/functions";
-import HowItWorks from "../home/HowItWorks";
+// import HowItWorks from "../home/HowItWorks";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -319,7 +319,7 @@ const Home = () => {
         </Grid>
       </Container>
 
-      <Container maxWidth={"auto"} style={{marginBottom: 50, marginLeft: 15, marginRight: 15, width: 'auto'}}>
+      {/* <Container maxWidth={"auto"} style={{marginBottom: 50, marginLeft: 15, marginRight: 15, width: 'auto'}}>
         <Box>
           <Typography align="center" className={classes.serveceBelo}>
             <span style={{ color: pallete.primaryPurple }}>How It</span> Works?
@@ -328,7 +328,7 @@ const Home = () => {
         <Grid container md={12}>
           <HowItWorks />
         </Grid>
-      </Container>
+      </Container> */}
       <Container maxWidth={false} className={classes.welcomCOntainer}>
         <Box>
           <Typography align="center" className={classes.serveceBelo}>
