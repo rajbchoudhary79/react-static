@@ -30,6 +30,9 @@ code {
 .slick-slider {
   overflow: hidden;
 }
+.slick-slide {
+  overflow: hidden;
+}
 .slick-dots {
   position: absolute;
   bottom: -25px;
@@ -52,3 +55,4 @@ code {
   left:auto;
   z-index: 99999;
 }
+

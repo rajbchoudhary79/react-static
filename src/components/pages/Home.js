@@ -31,7 +31,7 @@ const Home = () => {
 
   const settings = {
     centerMode: true,
-    centerPadding: "30px",
+    centerPadding: "0px",
     slidesToShow: 1,
     dots: true,
     infinite: true,
@@ -845,6 +845,7 @@ const useStyles = makeStyles()((theme) => {
       // ...styles.imagesBox,
       width: "100%",
       height: "100%",
+      objectFit: 'cover',
       [theme.breakpoints.down("sm")]: {
         height: "80%",
       },
@@ -1114,6 +1115,7 @@ const useStyles = makeStyles()((theme) => {
       ...styles.imagesBox,
       height: "100%",
       maxWidth: "100%",
+      objectFit: 'cover',
       [theme.breakpoints.down("sm")]: {
         // width: "100%",
         height: "80%",
@@ -1133,6 +1135,7 @@ const useStyles = makeStyles()((theme) => {
     },
     efficiencyCon: {
       height: "590px",
+      overflow: 'hidden',
       [theme.breakpoints.down("sm")]: {
         height: "700px",
       },
@@ -1142,7 +1145,7 @@ const useStyles = makeStyles()((theme) => {
     },
     serviceRightTextBox: {
       width: "100%",
-      margin: "auto",
+      margin: "50px auto",
       padding: "0 60px",
       [theme.breakpoints.down("sm")]: {
         padding: "20px 30px",
@@ -1168,6 +1171,7 @@ const useStyles = makeStyles()((theme) => {
     },
     onewomenImg: {
       // ...styles.imagesBox,
+      objectFit: 'cover',
       maxWidth: "100%",
       height: "100%",
       [theme.breakpoints.down("lg")]: {
@@ -1214,6 +1218,7 @@ const useStyles = makeStyles()((theme) => {
     },
     service2Conatiner: {
       backgroundColor: "#F0E6FB",
+      overflow: 'hidden',
       height: "590px",
       margin: "50px 0 0 0",
       [theme.breakpoints.down("sm")]: {
@@ -1225,6 +1230,7 @@ const useStyles = makeStyles()((theme) => {
       },
     },
     service2Conatiner2: {
+      overflow: 'hidden',
       backgroundColor: "#F0E6FB",
       height: "590px",
       [theme.breakpoints.down("sm")]: {
@@ -1341,7 +1347,7 @@ const useStyles = makeStyles()((theme) => {
       cursor: "pointer",
     },
     columnsGrid: {
-      margin: "100px 0px",
+      margin: "50px 0px",
       paddingLeft: "60px",
       [theme.breakpoints.down("sm")]: {
         margin: "auto 0",
