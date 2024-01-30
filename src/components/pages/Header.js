@@ -34,7 +34,7 @@ export default function ButtonAppBar() {
   const [anchorElCompany, setAnchorElCompany] = React.useState(null);
   const [scrolled, setScrolled] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [popOvertrue, setPopOverTrue] = React.useState(false);
+  const [popOvertrue] = React.useState(false);
   const [openCalendely, setOpenCalendely] = React.useState(false);
   const [openServ, setOpenServ] = React.useState(false);
   const [openComp, setOpenComp] = React.useState(false);
