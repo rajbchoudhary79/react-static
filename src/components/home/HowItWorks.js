@@ -1,84 +1,38 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
-import StepContent from "@mui/material/StepContent";
-import Button from "@mui/material/Button";
-import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
-import AddIcCallIcon from "@mui/icons-material/AddIcCall";
-import GroupsIcon from "@mui/icons-material/Groups";
-import CallReceivedIcon from "@mui/icons-material/CallReceived";
-import StepConnector, {
-  stepConnectorClasses,
-} from "@mui/material/StepConnector";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import { Grid, useMediaQuery } from "@mui/material";
+import { pallete } from "../css/Theme";
+import { makeStyles } from "tss-react/mui";
+import { useTheme } from "@emotion/react";
 
-const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
-  [`&.${stepConnectorClasses.alternativeLabel}`]: {
-    top: 22,
-  },
-  [`&.${stepConnectorClasses.active}`]: {
-    [`& .${stepConnectorClasses.line}`]: {
-      backgroundImage:
-        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
-    },
-  },
-  [`&.${stepConnectorClasses.completed}`]: {
-    [`& .${stepConnectorClasses.line}`]: {
-      backgroundImage:
-        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
-    },
-  },
-  [`& .${stepConnectorClasses.line}`]: {
-    height: 3,
-    border: 0,
-    backgroundColor:
-      theme.palette.mode === "dark" ? theme.palette.grey[800] : "#eaeaf0",
-    borderRadius: 1,
-  },
-}));
-
-const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
-  backgroundColor:
-    theme.palette.mode === "dark" ? theme.palette.grey[700] : "#ccc",
-  zIndex: 1,
-  color: "#fff",
-  width: 50,
-  height: 50,
-  display: "flex",
-  borderRadius: "50%",
-  justifyContent: "center",
-  alignItems: "center",
-  ...(ownerState.active && {
-    backgroundImage:
-      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)",
-    boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
-  }),
-  ...(ownerState.completed && {
-    backgroundImage:
-      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)",
-  }),
-}));
-
-function ColorlibStepIcon(props) {
-  const { active, completed, className } = props;
-
-  const icons = {
-    1: <AddIcCallIcon />,
-    2: <GroupsIcon />,
-    3: <CallReceivedIcon />,
-  };
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
   return (
-    <ColorlibStepIconRoot
-      ownerState={{ completed, active }}
-      className={className}
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`vertical-tabpanel-${index}`}
+      aria-labelledby={`vertical-tab-${index}`}
+      {...other}
     >
-      {icons[String(props.icon)]}
-    </ColorlibStepIconRoot>
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
   );
+}
+
+function a11yProps(index) {
+  return {
+    id: `vertical-tab-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
+  };
 }
 
 function HowItWorks() {
@@ -101,72 +55,98 @@ function HowItWorks() {
     },
   ];
 
-  const [activeStep, setActiveStep] = React.useState(0);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const { classes } = useStyles();
+  const [activeTab, setActiveTab] = React.useState(0);
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
+  const handleClick = (_, i) => {
+    setActiveTab(i);
   };
   return (
-    <Box sx={{ maxWidth: 400 }}>
-      <Stepper
-        activeStep={activeStep}
-        orientation="vertical"
-        connector={<ColorlibConnector />}
+    <Box className={classes.box}>
+      <Tabs
+        orientation={isSmallScreen ? "horizontal" : "vertical"}
+        variant="fullWidth"
+        value={activeTab}
+        onChange={handleClick}
+        aria-label="Vertical tabs example"
+        className={classes.tabs}
+        classes={{
+          flexContainer: "custom-flex-container",
+        }}
+        TabIndicatorProps={{
+          style: {
+            display: "none",
+          },
+        }}
       >
         {steps.map((step, index) => (
-          <Step key={step.label}>
-            <StepLabel
-              optional={<Typography variant="caption">{step.title}</Typography>}
-              StepIconComponent={ColorlibStepIcon}
-            >
-              {step.label}
-            </StepLabel>
-            <StepContent>
-              <Typography>{step.description}</Typography>
-              <Box sx={{ mb: 2 }}>
-                <div>
-                  {index !== steps.length - 1 && (
-                    <Button
-                      variant="contained"
-                      onClick={handleNext}
-                      sx={{ mt: 1, mr: 1 }}
-                    >
-                      Next
-                    </Button>
-                  )}
-                  {index > 0 && (
-                    <Button
-                      disabled={index === 0}
-                      onClick={handleBack}
-                      sx={{ mt: 1, mr: 1 }}
-                    >
-                      Back
-                    </Button>
-                  )}
-                </div>
-              </Box>
-            </StepContent>
-          </Step>
+          <Tab
+            key={step.label}
+            {...a11yProps(index)}
+            label={step.title}
+            className={classes.tab}
+            style={{
+              ...(activeTab === index
+                ? { border: `2px solid ${pallete.primaryPurple}` }
+                : {}),
+            }}
+          />
         ))}
-      </Stepper>
-      {activeStep === steps.length && (
-        <Paper square elevation={0} sx={{ p: 3 }}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
-          <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-            Reset
-          </Button>
-        </Paper>
-      )}
+      </Tabs>
+      <Box className={classes.contentWrapper}>
+        {steps.map((step, index) => (
+          <TabPanel key={step.label} index={index} value={activeTab}>
+            <Grid item>
+              <Typography variant="h5" color={pallete.primaryPurple}>
+                {step.label}
+              </Typography>
+              <Typography>{step.description}</Typography>
+            </Grid>
+          </TabPanel>
+        ))}
+      </Box>
     </Box>
   );
 }
 
 export default HowItWorks;
+
+const useStyles = makeStyles()((theme) => {
+  return {
+    box: {
+      flexGrow: 1,
+      display: "flex",
+      [theme.breakpoints.down("md")]: {
+        flexDirection: "column",
+      },
+    },
+    contentWrapper: { flexGrow: 1, display: "flex" },
+    tabs: {
+      borderRight: `2px solid ${pallete.primaryGray}`,
+      minWidth: 350,
+      display: "flex",
+      height: 240,
+      justifyContent: "space-between",
+      padding: "0 20px",
+      [theme.breakpoints.down("md")]: {
+        borderRight: "none",
+        borderBottom: `2px solid ${pallete.primaryGray}`,
+        height: "auto",
+        marginBottom: 10,
+        width: '100%',
+      },
+    },
+    tab: {
+      fontWeight: "bolder",
+      fontSize: "16px",
+      border: `2px solid ${pallete.primaryGray}`,
+      borderRadius: 12,
+      [theme.breakpoints.down("md")]: {
+        margin: "20px 0px",
+        maxWidth: '30%'
+      },
+    },
+  };
+});

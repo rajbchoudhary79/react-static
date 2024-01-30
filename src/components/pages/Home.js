@@ -23,7 +23,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import functions from "../../config/functions";
-// import HowItWorks from "../home/HowItWorks";
+import HowItWorks from "../home/HowItWorks";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -38,13 +38,9 @@ const Home = () => {
     vertical: false,
     speed: 1000,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
-    customPaging: (i) => (
-      <div className="ft-slick__dots--custom">
-        <div />
-      </div>
-    ),
+    customPaging: (i) => <div className="ft-slick__dots--custom"></div>,
     responsive: [
       {
         breakpoint: 768,
@@ -53,6 +49,7 @@ const Home = () => {
           centerMode: true,
           centerPadding: "0px",
           slidesToShow: 3,
+          dots: false,
         },
       },
       {
@@ -62,6 +59,7 @@ const Home = () => {
           centerMode: true,
           centerPadding: "0px",
           slidesToShow: 1,
+          dots: false,
         },
       },
     ],
@@ -321,28 +319,16 @@ const Home = () => {
         </Grid>
       </Container>
 
-      {/* <Container maxWidth={false}>
+      <Container maxWidth={"auto"} style={{marginBottom: 50, marginLeft: 15, marginRight: 15, width: 'auto'}}>
         <Box>
           <Typography align="center" className={classes.serveceBelo}>
             <span style={{ color: pallete.primaryPurple }}>How It</span> Works?
           </Typography>
         </Box>
-        <Grid container className={classes.clientMainGrid}>
-          <Grid item md={6} className={classes.clientLeftGrid}>
-            <HowItWorks />
-          </Grid>
-          <Grid item md={6} className={classes.clientRightGrid}>
-            <Box className={classes.happyClientBox}>
-              <Box
-                component="img"
-                src="assets/images/clientNEw.jpg"
-                alt=""
-                className={classes.clintImg}
-              />
-            </Box>
-          </Grid>
+        <Grid container md={12}>
+          <HowItWorks />
         </Grid>
-      </Container> */}
+      </Container>
       <Container maxWidth={false} className={classes.welcomCOntainer}>
         <Box>
           <Typography align="center" className={classes.serveceBelo}>
@@ -569,6 +555,7 @@ const useStyles = makeStyles()((theme) => {
     duoImagGrod: {
       ...styles.flexDRC,
       alignItems: "center",
+      position: "relative",
       [theme.breakpoints.down("sm")]: {
         // ...styles.flexDCC,
         order: 1,
@@ -576,6 +563,20 @@ const useStyles = makeStyles()((theme) => {
       },
       [theme.breakpoints.down("lg")]: {
         order: 1, // On small screens, this will be the second item
+      },
+      [theme.breakpoints.up("lg")]: {
+        "&:before": {
+          content: '""',
+          backgroundImage:
+            "linear-gradient(to right, rgba(255, 255, 255, 255), rgba(255, 255, 255, 0))",
+          position: "absolute",
+          height: "100%",
+          width: "200px",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          zIndex: 1,
+        },
       },
     },
     reactPlayerBox: {
@@ -598,7 +599,8 @@ const useStyles = makeStyles()((theme) => {
     pinIconBtn: {
       // your existing styles
       width: "100%", // Ensure the image is responsive
-      height: "auto",
+      height: "100%",
+      objectFit: "cover",
     },
     images1: {
       width: "80%%",
@@ -963,6 +965,7 @@ const useStyles = makeStyles()((theme) => {
     clintImg: {
       width: "95%",
       height: "400px",
+      objectFit: 'cover',
       [theme.breakpoints.down("sm")]: {
         width: "90%",
         height: "250px",
@@ -1151,7 +1154,7 @@ const useStyles = makeStyles()((theme) => {
         margin: "0",
       },
       [theme.breakpoints.down("lg")]: {
-        padding: "40px 50px",
+        padding: "40px 20px",
         margin: "0",
       },
     },
@@ -1208,13 +1211,37 @@ const useStyles = makeStyles()((theme) => {
       // [theme.breakpoints.down("sm")]: {
       //   display: "none",
       // },
+      position: "relative",
+      [theme.breakpoints.up("lg")]: {
+        "&:before": {
+          content: '""',
+          backgroundImage:
+            "linear-gradient(to left, rgb(240 230 251), rgb(240 230 251 / 0%))",
+          position: "absolute",
+          height: "100%",
+          width: "200px",
+          top: 0,
+          bottom: 0,
+          right: 0,
+          zIndex: 1,
+        },
+      },
     },
     serviceLftGrid1: {
-      [theme.breakpoints.down("sm")]: {
-        // height: "220px",
-        // ...styles.flexDRC,
-        // alignItems: "center",
-        // width: "100%",
+      position: "relative",
+      [theme.breakpoints.up("lg")]: {
+        "&:before": {
+          content: '""',
+          backgroundImage:
+            "linear-gradient(to left, rgb(240 230 251), rgb(240 230 251 / 0%))",
+          position: "absolute",
+          height: "100%",
+          width: "200px",
+          top: 0,
+          bottom: 0,
+          right: 0,
+          zIndex: 1,
+        },
       },
     },
     service2Conatiner: {
@@ -1378,17 +1405,19 @@ const useStyles = makeStyles()((theme) => {
         justifyContent: "center",
       },
       position: "relative",
-      "&:before": {
-        content: '""',
-        backgroundImage:
-          "linear-gradient(to right, rgba(255,255,255,255), rgba(255,255,255,0))",
-        position: "absolute",
-        height: "100%",
-        width: "200px",
-        top: 0,
-        bottom: 0,
-        left: 0,
-        zIndex: 1,
+      [theme.breakpoints.up("lg")]: {
+        "&:before": {
+          content: '""',
+          backgroundImage:
+            "linear-gradient(to right, rgba(255,255,255,255), rgba(255,255,255,0))",
+          position: "absolute",
+          height: "100%",
+          width: "200px",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          zIndex: 1,
+        },
       },
     },
     mainGrid: {
@@ -1417,6 +1446,7 @@ const useStyles = makeStyles()((theme) => {
       },
     },
     mainContainer: {
+      height: "590px",
       marginTop: "110px",
       [theme.breakpoints.down("sm")]: {
         marginBottom: "5px",

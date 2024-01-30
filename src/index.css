@@ -29,31 +29,43 @@ code {
 }
 .slick-slider {
   overflow: hidden;
-  padding-bottom: 35px;
 }
 .slick-slide {
   overflow: hidden;
 }
 .slick-dots {
   position: absolute;
-  bottom: -25px;
-  width: 100%;
-  display: block;
+  bottom: 100px !important;
+  left: 50px !important;
+  display: flex !important;
 }
-.ft-slick__dots--custom {
+.slick-dots li{
+  height: 20px;
+  width: 20px;
+}
+.slick-dots li.slick-active{
+  width: 50px;
+}
+
+.slick-dots li .ft-slick__dots--custom {
   height: 20px;
   width: 20px;
   background-color: #e5e7e9;
   border-radius: 50px;
-  position: absolute;
-  bottom: 25px;
+  margin: 0 5px;
 }
-.slick-dots .slick-active .ft-slick__dots--custom {
+.slick-dots li.slick-active .ft-slick__dots--custom{
   width: 50px;
   margin-right: 15px !important;
   background-color: rgb(104, 0, 215) !important;
   right: auto;
   left:auto;
-  z-index: 99999;
+  z-index: 1;
 }
 
+
+
+.custom-flex-container{
+  height: 100%;
+  justify-content: space-evenly;
+}
