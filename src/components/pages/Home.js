@@ -23,7 +23,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import functions from "../../config/functions";
-import HowItWorks from "../home/HowItWorks";
+// import HowItWorks from "../home/HowItWorks";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ const Home = () => {
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: "40px",
+          centerPadding: "0px",
           slidesToShow: 3,
         },
       },
@@ -60,7 +60,7 @@ const Home = () => {
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: "40px",
+          centerPadding: "0px",
           slidesToShow: 1,
         },
       },
@@ -137,7 +137,7 @@ const Home = () => {
       </Slider>
       <Container maxWidth={false}>
         <Box className={classes.serviceBox}>
-          <Typography align="center" className={classes.serveceBelo}>
+          <Typography align="center" className={classes.serviceBoxHeading}>
             <Typography
               className={classes.serveceBelos}
               style={{ color: pallete.primaryPurple }}
@@ -321,7 +321,7 @@ const Home = () => {
         </Grid>
       </Container>
 
-      <Container maxWidth={false}>
+      {/* <Container maxWidth={false}>
         <Box>
           <Typography align="center" className={classes.serveceBelo}>
             <span style={{ color: pallete.primaryPurple }}>How It</span> Works?
@@ -342,7 +342,7 @@ const Home = () => {
             </Box>
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
       <Container maxWidth={false} className={classes.welcomCOntainer}>
         <Box>
           <Typography align="center" className={classes.serveceBelo}>
@@ -585,11 +585,10 @@ const useStyles = makeStyles()((theme) => {
       // paddingTop: '56.25%', // Aspect ratio padding for 16:9 aspect ratio
       [theme.breakpoints.down("sm")]: {
         // Adjust the padding-top for different aspect ratios if needed
-        height: "50%",
-        width: "95%",
+        height: "auto",
       },
       [theme.breakpoints.down("lg")]: {
-        width: "95%",
+        width: "100%",
       },
     },
     reactPlayerLib: {
@@ -845,9 +844,9 @@ const useStyles = makeStyles()((theme) => {
       // ...styles.imagesBox,
       width: "100%",
       height: "100%",
-      objectFit: 'cover',
+      objectFit: "cover",
       [theme.breakpoints.down("sm")]: {
-        height: "80%",
+        height: "100%",
       },
     },
     homemenImgBG: {
@@ -1108,17 +1107,17 @@ const useStyles = makeStyles()((theme) => {
         padding: "30px 20px",
       },
       [theme.breakpoints.down("lg")]: {
-        padding: "40px 50px",
+        padding: "40px 20px",
       },
     },
     teamImg01: {
       ...styles.imagesBox,
       height: "100%",
       maxWidth: "100%",
-      objectFit: 'cover',
+      objectFit: "cover",
       [theme.breakpoints.down("sm")]: {
         // width: "100%",
-        height: "80%",
+        height: "100%",
         marginBottom: "20px",
       },
     },
@@ -1135,12 +1134,12 @@ const useStyles = makeStyles()((theme) => {
     },
     efficiencyCon: {
       height: "590px",
-      overflow: 'hidden',
+      overflow: "hidden",
       [theme.breakpoints.down("sm")]: {
-        height: "700px",
+        height: "auto",
       },
       [theme.breakpoints.between("md", "lg")]: {
-        height: "950px",
+        height: "auto",
       },
     },
     serviceRightTextBox: {
@@ -1149,9 +1148,11 @@ const useStyles = makeStyles()((theme) => {
       padding: "0 60px",
       [theme.breakpoints.down("sm")]: {
         padding: "20px 30px",
+        margin: "0",
       },
       [theme.breakpoints.down("lg")]: {
         padding: "40px 50px",
+        margin: "0",
       },
     },
     paraText: {
@@ -1171,7 +1172,7 @@ const useStyles = makeStyles()((theme) => {
     },
     onewomenImg: {
       // ...styles.imagesBox,
-      objectFit: 'cover',
+      objectFit: "cover",
       maxWidth: "100%",
       height: "100%",
       [theme.breakpoints.down("lg")]: {
@@ -1218,26 +1219,26 @@ const useStyles = makeStyles()((theme) => {
     },
     service2Conatiner: {
       backgroundColor: "#F0E6FB",
-      overflow: 'hidden',
+      overflow: "hidden",
       height: "590px",
       margin: "50px 0 0 0",
       [theme.breakpoints.down("sm")]: {
-        height: "700px",
+        height: "auto",
       },
       [theme.breakpoints.between("md", "lg")]: {
-        paddingBottom: "50px",
-        height: "950px",
+        paddingBottom: "0",
+        height: "auto",
       },
     },
     service2Conatiner2: {
-      overflow: 'hidden',
+      overflow: "hidden",
       backgroundColor: "#F0E6FB",
       height: "590px",
       [theme.breakpoints.down("sm")]: {
-        height: "700px",
+        height: "auto",
       },
       [theme.breakpoints.between("md", "lg")]: {
-        height: "950px",
+        height: "auto",
       },
     },
     contactUsBtn: {
@@ -1245,6 +1246,9 @@ const useStyles = makeStyles()((theme) => {
       padding: "12px 40px",
       marginTop: "30px",
       marginBottom: "80px",
+      [theme.breakpoints.down("sm")]: {
+        marginBottom: "20px",
+      },
     },
     serviceImg: {
       height: "500px",
@@ -1260,7 +1264,18 @@ const useStyles = makeStyles()((theme) => {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      margin: "100px 0",
+      margin: "50px 0",
+    },
+    serviceBoxHeading: {
+      fontSize: "40px",
+      fontStyle: "normal",
+      fontWeight: 600,
+      lineHeight: "normal",
+      textTransform: "capitalize",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "20px",
+        padding: "0 10px",
+      },
     },
     serveceBelo: {
       fontSize: "40px",
@@ -1270,7 +1285,6 @@ const useStyles = makeStyles()((theme) => {
       textTransform: "capitalize",
       [theme.breakpoints.down("sm")]: {
         fontSize: "20px",
-        // padding:"0 20px"
       },
     },
     serveceBelos: {
@@ -1366,7 +1380,8 @@ const useStyles = makeStyles()((theme) => {
       position: "relative",
       "&:before": {
         content: '""',
-        backgroundImage: "linear-gradient(to right, rgba(255,255,255,255), rgba(255,255,255,0))",
+        backgroundImage:
+          "linear-gradient(to right, rgba(255,255,255,255), rgba(255,255,255,0))",
         position: "absolute",
         height: "100%",
         width: "200px",
@@ -1374,7 +1389,7 @@ const useStyles = makeStyles()((theme) => {
         bottom: 0,
         left: 0,
         zIndex: 1,
-      }
+      },
     },
     mainGrid: {
       height: "100%",
@@ -1404,7 +1419,7 @@ const useStyles = makeStyles()((theme) => {
     mainContainer: {
       marginTop: "110px",
       [theme.breakpoints.down("sm")]: {
-        marginBottom: "50px",
+        marginBottom: "5px",
       },
       backgroundImage: "url(assets/images/GSDNewImages/GSD.png)", // Add your image path here
       backgroundRepeat: "no-repeat",
