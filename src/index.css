@@ -29,6 +29,7 @@ code {
 }
 .slick-slider {
   overflow: hidden;
+  padding-bottom: 35px;
 }
 .slick-slide {
   overflow: hidden;

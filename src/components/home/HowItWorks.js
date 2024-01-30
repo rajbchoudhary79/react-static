@@ -8,9 +8,9 @@ import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-import SettingsIcon from "@mui/icons-material/Settings";
-import GroupAddIcon from "@mui/icons-material/GroupAdd";
-import VideoLabelIcon from "@mui/icons-material/VideoLabel";
+import AddIcCallIcon from "@mui/icons-material/AddIcCall";
+import GroupsIcon from "@mui/icons-material/Groups";
+import CallReceivedIcon from "@mui/icons-material/CallReceived";
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
@@ -66,9 +66,9 @@ function ColorlibStepIcon(props) {
   const { active, completed, className } = props;
 
   const icons = {
-    1: <SettingsIcon />,
-    2: <GroupAddIcon />,
-    3: <VideoLabelIcon />,
+    1: <AddIcCallIcon />,
+    2: <GroupsIcon />,
+    3: <CallReceivedIcon />,
   };
 
   return (
