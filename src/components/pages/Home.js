@@ -23,7 +23,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import functions from "../../config/functions";
-// import HowItWorks from "../elements/HowItWorks";
+import HowItWorks from "../elements/HowItWorks";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -317,16 +317,17 @@ const Home = () => {
         </Grid>
       </Container>
 
-      {/* <Container maxWidth={"auto"} style={{marginBottom: 50, marginLeft: 15, marginRight: 15, width: 'auto'}}>
+      <Container
+        maxWidth={false}
+        className={classes.howItWorks}
+      >
         <Box>
-          <Typography align="center" className={classes.serveceBelo}>
-            <span style={{ color: pallete.primaryPurple }}>How It</span> Works?
+          <Typography align="center" className={classes.serveceBelo} >
+            <span style={{ color: pallete.primaryWhite }}>How It</span> Works?
           </Typography>
         </Box>
-        <Grid container md={12}>
-          <HowItWorks />
-        </Grid>
-      </Container> */}
+        <HowItWorks />
+      </Container>
       <Container maxWidth={false} className={classes.welcomCOntainer}>
         <Box>
           <Typography align="center" className={classes.serveceBelo}>
@@ -978,6 +979,13 @@ const useStyles = makeStyles()((theme) => {
         width: "80%",
       },
     },
+    howItWorks: {
+      padding: "70px 20px",
+      background: pallete.primaryPurple,
+      [theme.breakpoints.down("md")]: {
+        padding: "40px 20px",
+      },
+    },
     welcomCOntainer: {
       backgroundColor: "#F0E6FB",
       paddingLeft: "5px",
@@ -1131,7 +1139,7 @@ const useStyles = makeStyles()((theme) => {
       },
     },
     efficiencyCon: {
-      height: "590px",
+      height: "660px",
       overflow: "hidden",
       [theme.breakpoints.down("md")]: {
         height: "auto",
@@ -1242,7 +1250,7 @@ const useStyles = makeStyles()((theme) => {
     service2Conatiner: {
       backgroundColor: "#F0E6FB",
       overflow: "hidden",
-      height: "590px",
+      height: "660px",
       margin: "50px 0 0 0",
       [theme.breakpoints.down("md")]: {
         height: "auto",
@@ -1255,7 +1263,7 @@ const useStyles = makeStyles()((theme) => {
     service2Conatiner2: {
       overflow: "hidden",
       backgroundColor: "#F0E6FB",
-      height: "590px",
+      height: "660px",
       [theme.breakpoints.down("md")]: {
         height: "auto",
       },
@@ -1387,6 +1395,10 @@ const useStyles = makeStyles()((theme) => {
       paddingLeft: "60px",
       position: "relative",
       zIndex: 3,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      height: "80%",
       [theme.breakpoints.down("sm")]: {
         margin: "auto 0",
         padding: "0",
@@ -1417,7 +1429,7 @@ const useStyles = makeStyles()((theme) => {
         },
       },
     },
-    mainGrid: {},
+    mainGrid: { height: "100%" },
     mainText: {
       background: "linear-gradient(93deg, #6800D7 0.68%, #DC0155 65.41%)",
       backgroundClip: "text",
@@ -1438,10 +1450,11 @@ const useStyles = makeStyles()((theme) => {
       },
     },
     mainContainer: {
-      height: "590px",
+      height: "770px",
       marginTop: "110px",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         marginBottom: "5px",
+        height: "auto",
       },
       backgroundImage: "url(assets/images/GSDNewImages/GSD.png)", // Add your image path here
       backgroundRepeat: "no-repeat",
