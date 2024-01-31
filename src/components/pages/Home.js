@@ -23,7 +23,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import functions from "../../config/functions";
-// import HowItWorks from "../home/HowItWorks";
+// import HowItWorks from "../elements/HowItWorks";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const Home = () => {
     vertical: false,
     speed: 1000,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     customPaging: (i) => <div className="ft-slick__dots--custom"></div>,
     responsive: [
@@ -48,7 +48,7 @@ const Home = () => {
           arrows: false,
           centerMode: true,
           centerPadding: "0px",
-          slidesToShow: 3,
+          slidesToShow: 1,
           dots: false,
         },
       },
@@ -180,10 +180,8 @@ const Home = () => {
             </Typography>
             <Typography className={classes.paraText}>
               <b>
-                <i>
-                  Your strategic partner in simplifying complexities and
-                  optimizing efficiency.
-                </i>
+                Your strategic partner in simplifying complexities and
+                optimizing efficiency.
               </b>
               <br />
               <br />
@@ -440,7 +438,7 @@ const Home = () => {
             </Box>
           </Grid>
           <Grid item md={6}>
-            <Box className={classes.gsdArrouterBox}>
+            <Grid container className={classes.gsdArrouterBox}>
               {whyGsdArr.map((x) => (
                 <Grid
                   container
@@ -472,7 +470,7 @@ const Home = () => {
                   </Grid>
                 </Grid>
               ))}
-            </Box>
+            </Grid>
           </Grid>
         </Grid>
       </Container>
@@ -564,7 +562,7 @@ const useStyles = makeStyles()((theme) => {
       [theme.breakpoints.down("lg")]: {
         order: 1, // On small screens, this will be the second item
       },
-      [theme.breakpoints.up("lg")]: {
+      [theme.breakpoints.up("md")]: {
         "&:before": {
           content: '""',
           backgroundImage:
@@ -754,10 +752,7 @@ const useStyles = makeStyles()((theme) => {
       // your existing styles
       position: "relative",
       height: "100%",
-      width: "80%",
-      [theme.breakpoints.down("lg")]: {
-        width: "100%",
-      },
+      width: "100%",
     },
     fadeEffectRight: {
       position: "absolute",
@@ -965,7 +960,7 @@ const useStyles = makeStyles()((theme) => {
     clintImg: {
       width: "95%",
       height: "400px",
-      objectFit: 'cover',
+      objectFit: "cover",
       [theme.breakpoints.down("sm")]: {
         width: "90%",
         height: "250px",
@@ -1138,7 +1133,7 @@ const useStyles = makeStyles()((theme) => {
     efficiencyCon: {
       height: "590px",
       overflow: "hidden",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         height: "auto",
       },
       [theme.breakpoints.between("md", "lg")]: {
@@ -1212,7 +1207,7 @@ const useStyles = makeStyles()((theme) => {
       //   display: "none",
       // },
       position: "relative",
-      [theme.breakpoints.up("lg")]: {
+      [theme.breakpoints.up("md")]: {
         "&:before": {
           content: '""',
           backgroundImage:
@@ -1229,7 +1224,7 @@ const useStyles = makeStyles()((theme) => {
     },
     serviceLftGrid1: {
       position: "relative",
-      [theme.breakpoints.up("lg")]: {
+      [theme.breakpoints.up("md")]: {
         "&:before": {
           content: '""',
           backgroundImage:
@@ -1249,7 +1244,7 @@ const useStyles = makeStyles()((theme) => {
       overflow: "hidden",
       height: "590px",
       margin: "50px 0 0 0",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         height: "auto",
       },
       [theme.breakpoints.between("md", "lg")]: {
@@ -1261,7 +1256,7 @@ const useStyles = makeStyles()((theme) => {
       overflow: "hidden",
       backgroundColor: "#F0E6FB",
       height: "590px",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         height: "auto",
       },
       [theme.breakpoints.between("md", "lg")]: {
@@ -1390,6 +1385,8 @@ const useStyles = makeStyles()((theme) => {
     columnsGrid: {
       margin: "50px 0px",
       paddingLeft: "60px",
+      position: "relative",
+      zIndex: 3,
       [theme.breakpoints.down("sm")]: {
         margin: "auto 0",
         padding: "0",
@@ -1405,7 +1402,7 @@ const useStyles = makeStyles()((theme) => {
         justifyContent: "center",
       },
       position: "relative",
-      [theme.breakpoints.up("lg")]: {
+      [theme.breakpoints.up("md")]: {
         "&:before": {
           content: '""',
           backgroundImage:
@@ -1420,17 +1417,7 @@ const useStyles = makeStyles()((theme) => {
         },
       },
     },
-    mainGrid: {
-      height: "100%",
-      [theme.breakpoints.up("lg")]: {
-        width: "130%",
-        marginLeft: "-5px",
-      },
-      [theme.breakpoints.down("md")]: {
-        display: "flex",
-        justifyContent: "center",
-      },
-    },
+    mainGrid: {},
     mainText: {
       background: "linear-gradient(93deg, #6800D7 0.68%, #DC0155 65.41%)",
       backgroundClip: "text",
@@ -1440,9 +1427,14 @@ const useStyles = makeStyles()((theme) => {
       fontStyle: "normal",
       fontWeight: 600,
       lineHeight: "normal",
+      width: "150%",
+      [theme.breakpoints.down("md")]: {
+        fontSize: "30px",
+        width: "100%",
+      },
       [theme.breakpoints.down("sm")]: {
         fontSize: "25px",
-        // padding:'20px'
+        width: "100%",
       },
     },
     mainContainer: {

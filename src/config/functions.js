@@ -28,7 +28,7 @@ const getHomePageBanner = () => {
       {
         id: 6,
         image: "assets/images/banner/6.png",
-        title: "Translation/Interpreter Service",
+        title: "Translation/ Interpreter Service",
       },
     ];
 }

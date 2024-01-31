@@ -25,7 +25,7 @@ import { useNavigate } from "react-router-dom";
 import { PopupModal } from "react-calendly";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-
+import CallRoundedIcon from "@mui/icons-material/CallRounded";
 
 export default function ButtonAppBar() {
   const navigate = useNavigate();
@@ -144,7 +144,10 @@ export default function ButtonAppBar() {
       // onClick={handleDrawerToggle}
       sx={{ textAlign: "center" }}
     >
-      <Box className={classes.gsdLogoBox} onClick={() => handleMobileClicks("/")}>
+      <Box
+        className={classes.gsdLogoBox}
+        onClick={() => handleMobileClicks("/")}
+      >
         <img
           className={classes.mainLogoSize}
           alt="logo"
@@ -158,10 +161,16 @@ export default function ButtonAppBar() {
         aria-labelledby="nested-list-subheader"
       >
         <ListItemButton>
-          <ListItemText primary="Home" onClick={() => handleMobileClicks("/")}/>
+          <ListItemText
+            primary="Home"
+            onClick={() => handleMobileClicks("/")}
+          />
         </ListItemButton>
         <ListItemButton>
-          <ListItemText primary="Contact Us" onClick={() => handleMobileClicks("/about-us")}/>
+          <ListItemText
+            primary="Contact Us"
+            onClick={() => handleMobileClicks("/about-us")}
+          />
         </ListItemButton>
         <ListItemButton onClick={handleClick}>
           <ListItemText primary="Services" />
@@ -187,11 +196,28 @@ export default function ButtonAppBar() {
         <Collapse in={openComp} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItemButton sx={{ pl: 4 }}>
-              <ListItemText primary="About Us" onClick={() => handleMobileClicks("/contact-us")}/>
+              <ListItemText
+                primary="About Us"
+                onClick={() => handleMobileClicks("/contact-us")}
+              />
             </ListItemButton>
           </List>
         </Collapse>
       </List>
+
+      <Box
+        className={classes.gsdLogoBox}
+        style={{
+          position: 'absolute',
+          bottom: 10,
+          width: '100%',
+        }}
+      >
+        <Typography style={{ display: "flex", justifyContent: 'center', fontWeight: 700 }}>
+          <CallRoundedIcon style={{ fontSize: "20px", marginRight: "5px" }} />
+          +57 301 551 4257
+        </Typography>
+      </Box>
     </Box>
   );
 
@@ -402,6 +428,17 @@ export default function ButtonAppBar() {
               >
                 <Typography className={classes.menuText}>Contact us</Typography>
               </Box>
+              <Box className={classes.phoneBox}>
+                <Typography
+                  className={classes.menuText}
+                  style={{ display: "flex" }}
+                >
+                  <CallRoundedIcon
+                    style={{ fontSize: "20px", marginRight: "5px" }}
+                  />
+                  +57 301 551 4257
+                </Typography>
+              </Box>
             </Box>
             <Box className={classes.btnBox}>
               <Button
@@ -444,13 +481,13 @@ const useStyles = makeStyles()((theme) => {
     },
     btnBox: {
       margin: "auto 2px",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         display: "none",
       },
     },
     btnBoxMobile: {
       margin: "auto 2px",
-      [theme.breakpoints.up("sm")]: {
+      [theme.breakpoints.up("md")]: {
         display: "none",
       },
     },
@@ -462,6 +499,9 @@ const useStyles = makeStyles()((theme) => {
       fontSize: "16px",
       fontWeight: "600",
       fontFamily: "Roboto",
+      [theme.breakpoints.down("lg")]: {
+        padding: "12px 20px",
+      },
     },
     popoverBox: {
       top: "100px !importent",
@@ -505,7 +545,7 @@ const useStyles = makeStyles()((theme) => {
       fontFamily: "Roboto",
       fontSize: "16px",
       fontStyle: "normal",
-      fontWeight: 400,
+      fontWeight: 700,
       lineHeight: "normal",
       "&:hover": {
         cursor: "pointer",
@@ -519,7 +559,7 @@ const useStyles = makeStyles()((theme) => {
       fontFamily: "Roboto",
       fontSize: "16px",
       fontStyle: "normal",
-      fontWeight: 400,
+      fontWeight: 700,
       lineHeight: "normal",
       "&:hover": {
         cursor: "pointer",
@@ -528,7 +568,7 @@ const useStyles = makeStyles()((theme) => {
     },
     menuBoxParent: {
       ...styles.flexDRS,
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         display: "none",
       },
     },
@@ -545,18 +585,29 @@ const useStyles = makeStyles()((theme) => {
         cursor: "pointer",
         color: pallete.primaryPink,
       },
+      [theme.breakpoints.down("md")]: {
+        margin: "auto 5px",
+      },
     },
     menuBox: {
       ...styles.flexDRS,
-      margin: "auto 20px",
+      margin: "auto 10px",
       padding: "10px",
       color: pallete.black,
-      "&:hover": {},
+      [theme.breakpoints.down("md")]: {
+        margin: "auto 5px",
+      },
+    },
+    phoneBox: {
+      ...styles.flexDRS,
+      margin: "auto 10px",
+      padding: "10px",
+      color: pallete.black,
     },
     mainBox: {
       ...styles.flexDRS,
       width: "100%",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         width: "100%",
       },
     },
