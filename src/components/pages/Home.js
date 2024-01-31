@@ -38,7 +38,7 @@ const Home = () => {
     vertical: false,
     speed: 1000,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     customPaging: (i) => <div className="ft-slick__dots--custom"></div>,
     responsive: [
