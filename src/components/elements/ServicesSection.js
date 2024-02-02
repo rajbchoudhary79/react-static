@@ -1,13 +1,11 @@
-import { Box, Button, Card, CardContent, Container, Grid, Modal, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Box, Card, CardContent, Container, Grid, Typography } from "@mui/material";
+import React from "react";
 import { makeStyles } from "tss-react/mui";
 import { pallete } from "../css/Theme";
 import { styles } from "../css/CommonCSS";
 
 function ServicesSection({ servicesData }) {
   const { classes } = useStyles();
-  const [showModal, setShowModal] = useState(null);
-  const [anchorEl, setAnchorEl] = useState(null);
   return (
     <Container maxWidth={false} className={classes.servicesContainer}>
       <Box>

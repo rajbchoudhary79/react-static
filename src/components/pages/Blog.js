@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import CardMedia from "@mui/material/CardMedia";
-import { AspectRatio } from "@mui/icons-material";
 import { pallete } from "../css/Theme";
 
 const BlogPage = () => {
