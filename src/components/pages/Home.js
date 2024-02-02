@@ -293,7 +293,7 @@ const Home = () => {
             }}
             className={classes.takeYourBusiness}
           >
-            <Grid item md={9.5}>
+            <Grid item md={8}>
               <Box className={classes.expertLeftBox}>
                 <Typography className={classes.expetText}>
                   Take your business to new heights
@@ -304,7 +304,7 @@ const Home = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item md={2.5} className={classes.experBtnGrod}>
+            <Grid item md={4} className={classes.experBtnGrod}>
               <Button
                 onClick={() => navigate("/book-demo")}
                 variant="contained"
@@ -317,12 +317,9 @@ const Home = () => {
         </Grid>
       </Container>
 
-      <Container
-        maxWidth={false}
-        className={classes.howItWorks}
-      >
+      <Container maxWidth={false} className={classes.howItWorks}>
         <Box>
-          <Typography align="center" className={classes.serveceBelo} >
+          <Typography align="center" className={classes.serveceBelo}>
             <span style={{ color: pallete.primaryWhite }}>How It</span> Works?
           </Typography>
         </Box>
@@ -959,13 +956,9 @@ const useStyles = makeStyles()((theme) => {
       lineHeight: "normal",
     },
     clintImg: {
-      width: "95%",
-      height: "400px",
+      width: "100%",
+      height: "100%",
       objectFit: "cover",
-      [theme.breakpoints.down("sm")]: {
-        width: "90%",
-        height: "250px",
-      },
     },
     happyClientBox: {
       width: "82%",

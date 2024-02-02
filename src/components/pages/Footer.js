@@ -19,11 +19,8 @@ const Footer = () => {
   const { classes } = useStyles();
   return (
     <Container maxWidth={false} className={classes.mainContainer}>
-      <Grid
-        container
-        sx={{ display: "flex", flexDirection: "row", justifyContent: "center" }}
-      >
-        <Grid item md={3} xs={12}>
+      <Grid container className={classes.spaceGRid}>
+        <Grid item md={3} xs={12} className={classes.logoGrid}>
           <Box className={classes.logoBox}>
             <img
               className={classes.mainLogoSize}
@@ -38,78 +35,74 @@ const Footer = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item md={9} xs={12}>
-          <Grid container className={classes.spaceGRid}>
-            <Grid item md={3} xs={12} className={classes.fotterLinksGrid}>
-              <Typography
-                className={classes.mainTextLinks}
-                onClick={() => navigate("/")}
-              >
-                Home
-              </Typography>
-              {/* <Typography className={classes.mainTextLinks}>Pricing</Typography> */}
-              <Typography
-                className={classes.mainTextLinks}
-                onClick={() => navigate("/about-us")}
-              >
-                About
-              </Typography>
-              <Typography
-                className={classes.mainTextLinks}
-                onClick={() => navigate("/contact-us")}
-              >
-                Contact
-              </Typography>
-              <Typography
-                className={classes.mainTextLinks}
-                onClick={() => navigate("/privacy-policy")}
-              >
-                Privacy Policy
-              </Typography>
-              <Typography
-                className={classes.mainTextLinks}
-                onClick={() => navigate("/terms")}
-              >
-                Terms of service
-              </Typography>
-            </Grid>
-            <Grid item md={3} xs={12} className={classes.fotterLinksGrid2}>
-              <Box className={classes.socialIconsBox}>
-                <IconButton
-                  className={classes.iconsBtn}
-                  href="https://www.facebook.com/profile.php?id=61552206075713"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FacebookOutlinedIcon className={classes.socialIcons} />
-                </IconButton>
+        <Grid item md={6} xs={12} className={classes.fotterLinksGrid}>
+          <Typography
+            className={classes.mainTextLinks}
+            onClick={() => navigate("/")}
+          >
+            Home
+          </Typography>
+          {/* <Typography className={classes.mainTextLinks}>Pricing</Typography> */}
+          <Typography
+            className={classes.mainTextLinks}
+            onClick={() => navigate("/about-us")}
+          >
+            About
+          </Typography>
+          <Typography
+            className={classes.mainTextLinks}
+            onClick={() => navigate("/contact-us")}
+          >
+            Contact
+          </Typography>
+          <Typography
+            className={classes.mainTextLinks}
+            onClick={() => navigate("/privacy-policy")}
+          >
+            Privacy Policy
+          </Typography>
+          <Typography
+            className={classes.mainTextLinks}
+            onClick={() => navigate("/terms")}
+          >
+            Terms of service
+          </Typography>
+        </Grid>
+        <Grid item md={3} xs={12} className={classes.fotterLinksGrid2}>
+          <Box className={classes.socialIconsBox}>
+            <IconButton
+              className={classes.iconsBtn}
+              href="https://www.facebook.com/profile.php?id=61552206075713"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FacebookOutlinedIcon className={classes.socialIcons} />
+            </IconButton>
 
-                <IconButton
-                  className={classes.iconsBtn}
-                  href="https://www.instagram.com/gsd.outsourcing/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <InstagramIcon className={classes.socialIcons} />
-                </IconButton>
+            <IconButton
+              className={classes.iconsBtn}
+              href="https://www.instagram.com/gsd.outsourcing/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <InstagramIcon className={classes.socialIcons} />
+            </IconButton>
 
-                {/* <IconButton className={classes.iconsBtn}>
-  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-    <TwitterIcon className={classes.socialIcons} />
-  </a>
-</IconButton> */}
+            {/* <IconButton className={classes.iconsBtn}>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                  <TwitterIcon className={classes.socialIcons} />
+                </a>
+              </IconButton> */}
 
-                <IconButton
-                  className={classes.iconsBtn}
-                  href="https://www.linkedin.com/company/gsd-associates-get-stuff-done/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LinkedInIcon className={classes.socialIcons} />
-                </IconButton>
-              </Box>
-            </Grid>
-          </Grid>
+            <IconButton
+              className={classes.iconsBtn}
+              href="https://www.linkedin.com/company/gsd-associates-get-stuff-done/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedInIcon className={classes.socialIcons} />
+            </IconButton>
+          </Box>
         </Grid>
       </Grid>
       <Divider sx={{ border: "1px solid #FFF", margin: "30px 0" }} />
@@ -129,6 +122,20 @@ const useStyles = makeStyles()((theme) => {
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-between",
+      alignItems: "center",
+      [theme.breakpoints.down("sm")]: {
+        flexDirection: "column",
+      },
+      [theme.breakpoints.down("xs")]: {
+        flexDirection: "column",
+        paddingLeft: "30px",
+        alignItems: "start",
+      },
+    },
+    logoGrid: {
+      display: "flex",
+      flex: 1,
+      justifyContent: "center",
     },
     foorterAllrights: {
       color: "#686868",
@@ -145,9 +152,9 @@ const useStyles = makeStyles()((theme) => {
     },
     mainTextLinks: {
       color: "#2E2E2E",
-      fontSize: "16px",
+      fontSize: "18px",
       fontStyle: "normal",
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: "normal",
       padding: "5px 10px",
       fontFamily: "Roboto",
@@ -155,20 +162,29 @@ const useStyles = makeStyles()((theme) => {
       textDecoration: "none",
       transition: "color 0.3s",
       "&:hover": {
-        color: "#800080",
+        color: `${pallete.primaryPurple}`,
       },
     },
     fotterLinksGrid: {
+      display: "flex",
+      flex: 2,
+      justifyContent: "space-between",
+      [theme.breakpoints.down("md")]: {
+        marginTop: "30px",
+        marginBottom: "30px",
+        justifyContent: "center",
+      },
       [theme.breakpoints.down("sm")]: {
-        width: "100%",
+        flex: 1,
+      },
+      [theme.breakpoints.down("xs")]: {
+        flexDirection: "column",
       },
     },
     fotterLinksGrid2: {
       display: "flex",
-      flexDirection: "column-reverse",
-      [theme.breakpoints.down("sm")]: {
-        width: "100%",
-      },
+      flex: 1,
+      justifyContent: "center",
     },
     iconsBtn: {
       backgroundColor: "#FFF",
@@ -189,9 +205,9 @@ const useStyles = makeStyles()((theme) => {
     mainContainer: {
       backgroundColor: "#F0E6FB",
       padding: "50px 0",
-      bottom: "00px",
+      bottom: "0px",
       [theme.breakpoints.down("sm")]: {
-        // minHeight: "80vh",
+        padding: "0",
       },
     },
     mainLogoText: {
@@ -209,7 +225,7 @@ const useStyles = makeStyles()((theme) => {
       height: "60px",
       [theme.breakpoints.down("sm")]: {
         paddingTop: "20px",
-        width: "100px",
+        width: "80px",
         height: "80px",
       },
     },

@@ -25,7 +25,7 @@ import { useNavigate } from "react-router-dom";
 import { PopupModal } from "react-calendly";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import CallRoundedIcon from "@mui/icons-material/CallRounded";
+import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 
 export default function ButtonAppBar() {
   const navigate = useNavigate();
@@ -208,15 +208,19 @@ export default function ButtonAppBar() {
       <Box
         className={classes.gsdLogoBox}
         style={{
-          position: 'absolute',
+          position: "absolute",
           bottom: 10,
-          width: '100%',
+          width: "100%",
         }}
       >
-        <Typography style={{ display: "flex", justifyContent: 'center', fontWeight: 700 }}>
-          <CallRoundedIcon style={{ fontSize: "20px", marginRight: "5px" }} />
-          +57 301 551 4257
-        </Typography>
+        <a
+          className={classes.phoneText}
+          style={{ display: "flex", justifyContent: "center", fontWeight: 700 }}
+          href="mailto:info@gsdoutsource.com"
+        >
+          <EmailRoundedIcon style={{ fontSize: "20px", marginRight: "5px" }} />
+          Email Us
+        </a>
       </Box>
     </Box>
   );
@@ -231,8 +235,12 @@ export default function ButtonAppBar() {
           keepMounted: true,
         }}
         sx={{
-          display: { xs: "block", sm: "none" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: "70%" },
+          display: { sm: "block", md: "none" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: "70%",
+            maxWidth: "300px",
+          },
         }}
       >
         {renderDrawer()}
@@ -428,19 +436,20 @@ export default function ButtonAppBar() {
               >
                 <Typography className={classes.menuText}>Contact us</Typography>
               </Box>
-              <Box className={classes.phoneBox}>
-                <Typography
-                  className={classes.menuText}
-                  style={{ display: "flex" }}
-                >
-                  <CallRoundedIcon
-                    style={{ fontSize: "20px", marginRight: "5px" }}
-                  />
-                  +57 301 551 4257
-                </Typography>
-              </Box>
             </Box>
             <Box className={classes.btnBox}>
+              <Box className={classes.phoneBox}>
+                <a
+                  className={classes.phoneText}
+                  style={{ display: "flex" }}
+                  href="mailto:info@gsdoutsource.com"
+                >
+                  <EmailRoundedIcon
+                    style={{ fontSize: "20px", marginRight: "5px" }}
+                  />
+                  Email Us
+                </a>
+              </Box>
               <Button
                 onClick={() => navigate("/book-demo")}
                 className={classes.mainBtn}
@@ -480,6 +489,7 @@ const useStyles = makeStyles()((theme) => {
       padding: "5px",
     },
     btnBox: {
+      display: "flex",
       margin: "auto 2px",
       [theme.breakpoints.down("md")]: {
         display: "none",
@@ -547,6 +557,21 @@ const useStyles = makeStyles()((theme) => {
       fontStyle: "normal",
       fontWeight: 700,
       lineHeight: "normal",
+      "&:hover": {
+        cursor: "pointer",
+        color: pallete.primaryPink,
+      },
+    },
+    phoneText: {
+      margin: "auto",
+      padding: "0 5px",
+      color: pallete.primaryBlack,
+      fontFamily: "Roboto",
+      fontSize: "16px",
+      fontStyle: "normal",
+      fontWeight: 700,
+      lineHeight: "normal",
+      textDecoration: 'none',
       "&:hover": {
         cursor: "pointer",
         color: pallete.primaryPink,

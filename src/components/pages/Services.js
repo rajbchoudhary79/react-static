@@ -474,6 +474,7 @@ const useStyles = makeStyles()((theme) => {
     },
     mainContainer: {
       paddingTop: "110px",
+      height: "660px",
       backgroundColor: "#F0E6FB",
       position: "relative",
     },

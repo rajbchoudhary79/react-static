@@ -11,6 +11,7 @@ export const pallete = {
   primaryWhite: "#FFFFFF",
   primaryPurple: "#6800D7",
   primaryGray: "#b8b8b8",
+  primaryLightPink: "#F0E6FB",
 };
 
 let theme = createTheme({

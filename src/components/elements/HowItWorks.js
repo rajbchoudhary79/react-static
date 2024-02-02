@@ -31,10 +31,7 @@ function HowItWorks() {
 
   return (
     <Box className={classes.box}>
-      <Grid
-        container
-        className={classes.contentWrapper}
-      >
+      <Grid container className={classes.contentWrapper}>
         {steps.map((step, index) => (
           <Grid item key={index} className={classes.grid}>
             <Box
@@ -47,7 +44,11 @@ function HowItWorks() {
                 objectFit: "contain",
               }}
             />
-            <Typography variant="h5" color={pallete.primaryWhite}>
+            <Typography
+              variant="h5"
+              color={pallete.primaryWhite}
+              style={{ marginTop: "10px", marginBottom: "10px" }}
+            >
               {step.label}
             </Typography>
             <Typography variant="p" color={pallete.primaryWhite}>
