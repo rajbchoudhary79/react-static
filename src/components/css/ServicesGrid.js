@@ -17,7 +17,7 @@ const ServicesGrid = ({ text1, text2, image }) => {
           className={classes.heading}
         />
       </Grid>
-      <Grid item md={6}>
+      <Grid item md={6} className={classes.imageBox}>
         <Box
           component="img"
           className={classes.imageTop}
@@ -39,17 +39,33 @@ const useStyles = makeStyles()((theme) => {
       height: "100%",
       [theme.breakpoints.down("lg")]: {
         height: "auto",
+        margin: "25px 0"
       },
     },
     mainGrid: {
-      height: "75vh",
+      height: "100%",
+    },
+    imageBox: {
+      position: "relative",
+      [theme.breakpoints.up("md")]: {
+        "&:before": {
+          content: '""',
+          backgroundImage:
+            "linear-gradient(to right, rgb(240 230 251), rgb(240 230 251 / 0%))",
+          position: "absolute",
+          height: "100%",
+          width: "200px",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          zIndex: 1,
+        },
+      },
     },
     imageTop: {
       width: "100%",
       height: "100%",
-      [theme.breakpoints.down("lg")]: {
-        height: "auto",
-      },
+      objectFit: "cover",
     },
     heading: {
       background: "linear-gradient(93deg, #6800D7 0.68%, #DC0155 65.41%)",

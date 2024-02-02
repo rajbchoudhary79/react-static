@@ -178,7 +178,7 @@ const AboutUs = () => {
           className={classes.benefitBoxes}
         >
           {benefits.map((item, index) => (
-            <Grid item xs={6} md={4} key={index}>
+            <Grid item xs={6} md={4} key={index} className="benefit-grid">
               <Card className={classes.benefitItem}>
                 <CardContent>
                   <Typography align="center" className={classes.benefitTitle}>
@@ -552,12 +552,13 @@ const useStyles = makeStyles()((theme) => {
       padding: 10,
       borderRadius: 10,
       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+      transition: "all 300ms",
       [theme.breakpoints.down("sm")]: {
         padding: "0 20px",
       },
     },
     benefitTitle: {
-      fontSize: "18px",
+      fontSize: "20px",
       fontWeight: 600,
       color: `${pallete.primaryPurple}`,
       marginBottom: 10,

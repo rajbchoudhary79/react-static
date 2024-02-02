@@ -1,17 +1,6 @@
 import React from "react";
-import {
-  Container,
-  Typography,
-  Box,
-  Grid,
-  Card,
-  Button,
-  Divider,
-} from "@mui/material";
+import { Container } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import { pallete } from "../css/Theme";
-import { styles } from "../css/CommonCSS";
-import { useNavigate } from "react-router-dom";
 import PermContactCalendarOutlinedIcon from "@mui/icons-material/PermContactCalendarOutlined";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
 import RocketLaunchOutlinedIcon from "@mui/icons-material/RocketLaunchOutlined";
@@ -19,11 +8,14 @@ import EventAvailableOutlinedIcon from "@mui/icons-material/EventAvailableOutlin
 import AssessmentOutlinedIcon from "@mui/icons-material/AssessmentOutlined";
 import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
 import ServicesGrid from "../css/ServicesGrid";
+import BookDemo from "../elements/BookDemo";
+import AboutSection from "../elements/AboutSection";
+import ServicesSection from "../elements/ServicesSection";
+import WhyOurServices from "../elements/WhyOurServices";
+import FaqSection from "../elements/FaqSection";
 
 const Services = () => {
   const { classes } = useStyles();
-  const navigate = useNavigate();
-
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -32,202 +24,61 @@ const Services = () => {
     {
       icon: <PermContactCalendarOutlinedIcon className={classes.icons2} />,
       heading: `Efficiently Manage Your Schedule`,
+      background: "assets/background/blob-scene-1.svg",
+      description:
+        "Our virtual assistant will ensure that your commitments, important meetings, and crucial tasks are impeccably, in your calendar and will strategically schedule your meetings to avoid scheduling conflicts. You can trust that your virtual assistant will pay attention to the details so you can focus on what truly matters: growing your business. Have a personal assistant at your disposal to make your life easier.",
     },
     {
       icon: <MailOutlinedIcon className={classes.icons2} />,
       heading: "Streamline Email and Communication",
+      background: "assets/background/blob-scene.svg",
+      description:
+        "Gain control of your communication process with our Virtual Assistants. It can organize your inbox, prioritize tasks, schedule meetings and calls, manage phone calls and business chats, and follow up with clients. Save time and experience the benefits of efficient communication today.",
     },
     {
       icon: <RocketLaunchOutlinedIcon className={classes.icons2} />,
       heading: "Proactively Manage Tasks",
+      background: "assets/background/blob.svg",
+      description:
+        "With our Virtual Assistants, you get a reliable helper that proactively manages tasks, anticipates your needs, and ensures everything runs smoothly. Deadlines are met, important dates are remembered, and events and meetings are scheduled without a hitch. Say goodbye to scheduling conflicts and hello to a stress-free workday.",
     },
     {
       icon: <EventAvailableOutlinedIcon className={classes.icons2} />,
       heading: "Coordinate Travel and Events",
+      background: "assets/background/blurry-gradient.svg",
+      description:
+        "Our virtual assistant can coordinate your travel and events. It can find and book flights, hotels, and ground transportation based on your preferences. For events, it can book venues, coordinate schedules, manage RSVPs, and provide reminders. It can also keep track of recurring events to ensure that everything runs smoothly.",
     },
     {
       icon: <AssessmentOutlinedIcon className={classes.icons2} />,
       heading: "Research and Reporting",
+      background: "assets/background/circle-scatter.svg",
+      description:
+        "Gain a competitive advantage with our researchers who provide valuable information for strategic decision-making. They conduct thorough research, analyze local competition, assess market trends, and gather relevant demographic data, all presented in clear concise reports. This function also helps monitor the effectiveness of your business strategies. Gain a data-driven view of your business environment with our research and reporting function.",
     },
     {
       icon: <ManageAccountsOutlinedIcon className={classes.icons2} />,
       heading: "Vendor and Financial Management",
+      background: "assets/background/wave.svg",
+      description:
+        "Our Virtual Assistants can manage suppliers, track invoices, and ensure prompt payments. Avoid delays and late fees, maintain robust supplier relationships, and save money by reviewing expenses with our help.",
     },
   ];
 
   return (
     <>
-      <Box className={classes.mainContainer}>
+      <Container maxWidth={false} className={classes.mainContainer}>
         <ServicesGrid
           text1="Virtual Private"
           text2="Assistant"
-          image="assets/images/vpaNew.jpg"
+          image="assets/images/vpa.jpg"
         />
-      </Box>
-      <Container maxWidth={false} className={classes.conatiner2}>
-        <Typography variant="h4" color="primary" align="center">
-          About
-        </Typography>
-        <Grid container className={classes.containerNeew1}>
-          <Grid item md={12}>
-            <Card className={classes.cardFirst}>
-              <Typography variant="h6" className={classes.paraPadidng}>
-                Discover the transformative power of hiring a virtual assistant!
-                Unlock a realm of benefits, where decreased employment costs,
-                soaring productivity, and the gift of reclaimed time become your
-                daily reality. Imagine slashing costs by up to 70%, gaining
-                invaluable moments in your day, and witnessing a surge in
-                overall efficiency. By entrusting your most laborious tasks to a
-                virtual assistant, you liberate your mind to focus on tasks that
-                only you can master. Moreover, this isn't just a cost-effective
-                solution; it's the key to scaling your business effortlessly,
-                without the burden of costly office space or equipment. Embrace
-                sustainable growth, and let a virtual assistant redefine the way
-                you work!
-              </Typography>
-            </Card>
-          </Grid>
-        </Grid>
-
-        <Typography variant="h4" color="primary" align="center">
-          Services
-        </Typography>
-        <Grid container sx={{ ...styles.flexDRC, paddingTop: "20px" }}>
-          <Grid container md={8} lg={12} sx={{ ...styles.flexDRC }}>
-            {servicesData.map((x) => (
-              <Grid
-                key={x.icon}
-                item
-                md={4}
-                lg={6}
-                className={classes.serv2grid}
-              >
-                <Card className={classes.cardSecond}>{x.icon}</Card>
-                <Typography
-                  variant="h5"
-                  align="center"
-                  className={classes.serv2gridH}
-                >
-                  {x.heading}
-                </Typography>
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
       </Container>
-      <Container maxWidth={false} className={classes.conatiner3}>
-        <Typography variant="h4" align="center">
-          <Typography variant="h4" color="primary">
-            Why Our Services Are
-          </Typography>
-          Different
-        </Typography>
-        <Grid container sx={{ ...styles.flexDRC, paddingTop: "20px" }}>
-          <Grid container md={9}>
-            <Grid item sm={6} md={4}>
-              <Card className={classes.serv2gridCard}>
-                <Box
-                  component="img"
-                  className={classes.products}
-                  src="\assets\icons\services\p1.svg"
-                  alt="Descriptive Alt Text"
-                />
-                <Typography variant="h5" align="center">
-                  Unwavering Commitment to Excellence
-                </Typography>
-                <Typography variant="h6" align="center">
-                  We emphasize an unwavering commitment to delivering
-                  excellence, ensuring that the quality of service surpasses
-                  conventional solutions in the outsourcing industry.{" "}
-                </Typography>
-              </Card>
-            </Grid>
-            <Grid item sm={6} md={4} className={classes.whyGridMid}>
-              <Box
-                component="img"
-                className={classes.productsBGImg}
-                src="\assets\icons\services\fill.png"
-                alt="Descriptive Alt Text"
-              />
-              <Card
-                sx={{ position: "absolute" }}
-                className={classes.serv2gridCard}
-              >
-                <Box
-                  component="img"
-                  className={classes.products}
-                  src="\assets\icons\services\p2.svg"
-                  alt="Descriptive Alt Text"
-                />
-                <Typography variant="h5" align="center">
-                  Flexible, Scalable, and Customized Solutions
-                </Typography>
-                <Typography variant="h6" align="center">
-                  We offer solutions that are not only flexible but also
-                  scalable and customized to meet the unique demands of each
-                  client, ensuring a tailored approach for maximum
-                  effectiveness.{" "}
-                </Typography>
-              </Card>
-            </Grid>
-            <Grid item sm={6} md={4}>
-              <Card className={classes.serv2gridCard}>
-                <Box
-                  component="img"
-                  className={classes.products}
-                  src="\assets\icons\services\p3.svg"
-                  alt="Descriptive Alt Text"
-                />
-                <Typography variant="h5" align="center">
-                  Exceeding Expectations Through Dedication{" "}
-                </Typography>
-                <Typography variant="h6" align="center">
-                  GSD's commitment goes beyond conventional service providers;
-                  the emphasis on exceeding expectations showcases a dedication
-                  to delivering exceptional results and client satisfaction.{" "}
-                </Typography>
-              </Card>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Container>
-      <Container maxWidth={false} className={classes.expertContainer}>
-        <Grid container className={classes.blogsGrid}>
-          <Grid
-            container
-            md={8}
-            sx={{
-              backgroundColor: pallete.primaryPurple,
-              borderRadius: "12px",
-            }}
-            className={classes.takeYourBusiness}
-          >
-            <Grid item md={9}>
-              <Box className={classes.expertLeftBox}>
-                <Typography className={classes.expetText}>
-                  Book a Demo
-                </Typography>
-                <Divider variant="inset" className={classes.dividerMain} />
-                <Typography className={classes.expectPara}>
-                  Explore the remarkable journey of businesses that have
-                  harnessed the power of Virtual Private Assistants (VPAs) to
-                  revolutionize their operations and achieve unprecedented
-                  success.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item md={3} className={classes.experBtnGrodBottom}>
-              <Button
-                onClick={() => navigate("/book-demo")}
-                variant="contained"
-                className={classes.expertBtns}
-              >
-                Get Started
-              </Button>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Container>
+      <AboutSection />
+      <ServicesSection servicesData={servicesData} />
+      <WhyOurServices />
+      <BookDemo />
+      <FaqSection />
     </>
   );
 };
@@ -236,279 +87,18 @@ export default Services;
 
 const useStyles = makeStyles()((theme) => {
   return {
-    whyGridMid: {
-      position: "relative",
-      [theme.breakpoints.down("lg")]: {
-        position: "fixed",
-      },
-    },
-    aboutImgGrid: {
-      // ...styles.flexDRC,
-      padding: "0 40px 0 10px",
-    },
-    aboutImsg: {
-      // ...styles.imagesBox,
-      width: "100%",
-      height: "80%",
-      boxShadow: "22px 28px 75px 0 rgba(55,46,206,.18)",
-      borderRadius: "8px",
-    },
-    serv2gridH: {
-      padding: "5px 20px",
-      fontWeight: 400,
-      letterSpacing: "0.5px",
-    },
-    cardSecond: {
-      ...styles.flexDRC,
-      borderRadius: "8px",
-      padding: "10px",
-      margin: "10px 0",
-      boxShadow:
-        "0 8px 13px -3px rgba(50,50,93,0.15), 0 4px 8px -4px rgba(0,0,0,0.15)",
-    },
-    containerNeew1: {
-      padding: "40px",
-      display: "flex", // Set the container to be a flex container
-      flexDirection: "row", // Align children in a row
-      alignItems: "stretch",
-    },
-    cardFirst: {
-      borderRadius: "8px",
-      padding: "40px",
-      // backgroundColor:"#",
-      boxShadow:
-        "0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3)",
-    },
-    paraPadidng: {
-      padding: "10px 0",
-    },
-    blogsGrid: {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-      alignContent: "center",
-    },
-    expetText: {
-      color: "#FFFFFF",
-      fontSize: "26px",
-      fontStyle: "normal",
-      fontWeight: 600,
-      lineHeight: "normal",
-      fontFamily: "Montserrat",
-    },
-    expectPara: {
-      color: "#FFFFFF",
-      fontSize: "16px",
-      fontStyle: "normal",
-      fontWeight: 400,
-      lineHeight: "normal",
-      fontFamily: "Roboto",
-    },
-    expertBtns: {
-      ...styles.buttonMain,
-      backgroundColor: "#fff",
-      color: "#737373",
-      "&:hover": {
-        backgroundColor: "#fff",
-        color: "#737373",
-      },
-    },
-    experBtnGrodBottom: {
-      margin: "auto",
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-around",
-    },
-    dividerMain: {
-      width: "48px",
-      height: "4px",
-      backgroundColor: "#fff", // Replace with your desired color
-      margin: theme.spacing(1, 0),
-      borderRadius: "2px",
-    },
-    takeYourBusiness: {
-      [theme.breakpoints.down("sm")]: {
-        padding: "50px 0",
-      },
-    },
-    expertLeftBox: {
-      padding: "40px 40px",
-    },
-    expertGrid: {
-      padding: "200px 50px",
-      height: "300px",
-    },
-    expertContainer: {
-      margin: "100px 0",
-    },
-    serviceImg0: {
-      ...styles.imagesBox,
-      position: "absolute",
-      height: "417px",
-      // width: "347px",
-    },
-    serviceImg1: {
-      ...styles.imagesBox,
-      position: "absolute",
-      height: "417px",
-      // width: "347px",
-    },
-    chooseIspara: {
-      padding: "20px 200px",
-    },
-    conatiner6: {
-      padding: "50px 0",
-    },
-    conatiner7: {
-      margin: "50px 0",
-      backgroundImage: "url(assets/icons/services/lappyMan.png)",
-      backgroundRepeat: "no-repeat",
-      height: "600px",
-      ...styles.flexDCC,
-      position: "relative",
-    },
-    transparentText: {
-      fontFamily: "Montserrat",
-      fontSize: "80px",
-      fontStyle: "normal",
-      fontWeight: 600,
-      lineHeight: "normal",
-      textTransform: "uppercase",
-      color: "#FFF",
-      opacity: "0.2",
-    },
-    conatiner4: {
-      padding: "50px 0",
-    },
-    conatiner5: {
-      padding: "50px 0",
-      backgroundColor: pallete.primaryPurple,
-    },
-    products: {
-      ...styles.imagesBox,
-      width: "100px",
-      height: "100px",
-    },
-    staff: {
-      ...styles.imagesBox,
-      // width: "100px",
-      // height: "100px",
-    },
-    productsBGImg: {
-      ...styles.imagesBox,
-      position: "absolute",
-      width: "82%",
-      top: "6px",
-      left: "70px",
-      height: "400px",
-    },
-    conatiner3: {
-      backgroundColor: "#F0E6FB",
-      padding: "50px 0",
-    },
-    serv2grid: {
-      padding: "10px 20px",
-      ...styles.flexDCC,
-      alignItems: "center",
-    },
-    serv2gridCard: {
-      height: "400px",
-      padding: "40px 30px",
-      margin: "20px 40px",
-      ...styles.flexDCC,
-      alignItems: "center",
-      borderRadius: "12px",
-    },
     icons2: {
-      fontSize: "70px",
+      fontSize: "50px",
       color: "#EF2A82",
     },
-    conatiner2: {
-      padding: "50px 0px",
-    },
-    cube: {
-      position: "absolute",
-      right: "60px",
-      [theme.breakpoints.down("sm")]: {
-        right: "200px",
-      },
-    },
-    plantSmall: {
-      position: "absolute",
-      left: "210px",
-      [theme.breakpoints.down("sm")]: {
-        left: "260px",
-      },
-    },
-    pantBig: {
-      position: "absolute",
-      bottom: "0",
-      right: "20px",
-      [theme.breakpoints.down("sm")]: {
-        right: "-100px",
-      },
-    },
-    homemenBox: {
-      position: "relative",
-    },
-    pinIconBtn: {
-      with: "50%",
-      [theme.breakpoints.down("sm")]: {
-        height: "300px",
-        width: "100%",
-      },
-    },
-    pinIconBgL: {
-      // ...styles.imagesBox,
-      position: "absolute",
-      left: "0px",
-      bottom: "-50px",
-    },
-    pinIconBgR: {
-      // ...styles.imagesBox,
-      position: "absolute",
-      right: "0px",
-      top: "60px",
-    },
-    mainText: {
-      background: "linear-gradient(93deg, #6800D7 0.68%, #DC0155 65.41%)",
-      backgroundClip: "text",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      fontSize: "65px",
-      fontStyle: "normal",
-      fontWeight: 600,
-      lineHeight: "normal",
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "25px",
-        // padding:'20px'
-      },
-    },
-    columnsGrid: {
-      margin: "100px 0px",
-      paddingLeft: "60px",
-      height: "100%",
-      backgroundImage: "url(assets/images/GSDNewImages/GSD.png)",
-      backgroundRepeat: "no-repeat",
-      [theme.breakpoints.down("sm")]: {
-        margin: "auto 0",
-        padding: "0",
-      },
-    },
-    columnsGridRight: {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
-    },
-    mainGrid: {
-      // height: "100%",
-      // backgroundImage: "url(assets/images/GSDNewImages/GSD.png)",
-      // backgroundRepeat: "no-repeat",
-    },
     mainContainer: {
-      paddingTop: "110px",
+      marginTop: "110px",
+      height: "660px",
       backgroundColor: "#F0E6FB",
+      padding: "0 !important",
+      [theme.breakpoints.down("md")]: {
+        height: "auto",
+      },
     },
   };
 });
