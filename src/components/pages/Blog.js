@@ -6,16 +6,18 @@ import {
   Card,
   CardContent,
   Box,
-  CardActionArea
+  CardActionArea,
 } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import CardMedia from "@mui/material/CardMedia";
 import { pallete } from "../css/Theme";
+import functions from "../../config/functions";
+import { Link } from "react-router-dom";
 
 const BlogPage = () => {
   const { classes } = useStyles();
 
-  const repeatedImages = ["assets/images/blogPage/blog1.jpg"];
+  const blogs = functions.getBlogs();
 
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -61,7 +63,7 @@ const BlogPage = () => {
             align="center"
             color="primary"
             gutterBottom
-            style={{ width: "100%", marginBottom: '20px' }}
+            style={{ width: "100%", marginBottom: "20px" }}
           >
             Popular <span style={{ color: "black" }}>Topics</span>
           </Typography>
@@ -75,21 +77,30 @@ const BlogPage = () => {
         </Box>
         <Grid container className={classes.cardGrid}>
           {/* Blog Cards */}
-          {repeatedImages.map((image, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+          {blogs.map((blog, index) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              key={index}
+              sx={{ padding: "10px" }}
+            >
               <Card className={classes.blogCard}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    image={image}
-                    alt={`Image ${index + 1}`}
+                    image={blog.image}
+                    alt={blog.title}
                     className={classes.blogImage}
                   />
                   <CardContent>
                     {/* Date */}
-                    {/* <Typography variant="body2" color="text.secondary">
-                      10.22.2023
-                    </Typography> */}
+                    {blog.date && (
+                      <Typography variant="body2" color="text.secondary">
+                        {blog.date}
+                      </Typography>
+                    )}
 
                     {/* Title */}
                     <Typography
@@ -98,18 +109,12 @@ const BlogPage = () => {
                       component="div"
                       className={classes.blogTitle}
                     >
-                      Unleashing the Power of Virtual Assistants
+                      <Link to={`/blogs/${blog.slug}`} style={{textDecoration: 'none'}}>{blog.title}</Link>
                     </Typography>
 
                     {/* Description */}
                     <Typography variant="body2" color="text.secondary">
-                      In this digital age, businesses are continually seeking
-                      ways to enhance efficiency and streamline operations.
-                      Enter Virtual Assistants – the game-changers that have
-                      redefined the business landscape. Leveraging advanced
-                      technologies and versatile skill sets, Virtual Assistants
-                      offer a dynamic solution to the challenges of modern-day
-                      business operations.
+                      {blog.description}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -183,13 +188,15 @@ const useStyles = makeStyles()((theme) => {
       alignItems: "center",
     },
     cardGrid: {
-      justifyContent: "center",
+      justifyContent: "start",
       alignItems: "center",
+      padding: "0 16px",
       [theme.breakpoints.down("sm")]: {
-        padding: "0 40px",
+        padding: "0 30px",
+        justifyContent: "center",
       },
       [theme.breakpoints.down("xs")]: {
-        padding: "0 20px",
+        padding: "0 10px",
       },
     },
     blogCard: {
@@ -206,19 +213,22 @@ const useStyles = makeStyles()((theme) => {
     },
     mainContainer: {
       marginTop: "110px",
-      height: "590px",
+      height: "660px",
       background: "linear-Gradient(180deg,#DECAF4 0%,#EDC9DB 100%)",
       backgroundColor: "linear-gradint(180deg,#DECAF4 0%,#EDC9DB 100%)",
       [theme.breakpoints.down("lg")]: {
         height: "auto",
       },
+      [theme.breakpoints.down("sm")]: {
+        padding: 0,
+      },
     },
     mainGrid: {
       height: "100%",
       width: "100%",
-      paddingLeft: "120px",
+      paddingLeft: "26px",
       [theme.breakpoints.down("lg")]: {
-        padding: "0 40px",
+        padding: "0 30px",
       },
       [theme.breakpoints.down("xs")]: {
         padding: "0 20px",

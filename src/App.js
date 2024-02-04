@@ -23,6 +23,7 @@ import VirtualReceptionistservices from "./components/pages/VirtualReceptionists
 import SpanishTranslation from "./components/pages/SpanishTranslaetionServices";
 import PrivacyPolicy from "./components/pages/PrivacyPolicy";
 import Terms from "./components/pages/Terms";
+import BlogDetail from "./components/pages/BlogDetail";
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -46,7 +47,10 @@ export default function App() {
             <Route exact path="/career" element={<Career />} />
             <Route exact path="/about-us" element={<AboutUs />} />
             <Route exact path="/meet-team" element={<MeetTheTeam />} />
-            <Route exact path="/blogs" element={<BlogPage />} />
+            <Route path="/blogs">
+              <Route exact path="" element={<BlogPage />} />
+              <Route exact path=":slug" element={<BlogDetail />} />
+            </Route>
             <Route exact path="/payments" element={<PaymentPage />} />
             <Route exact path="/book-demo" element={<Demo />} />
             <Route exact path="/contact-us" element={<ContactUs />} />

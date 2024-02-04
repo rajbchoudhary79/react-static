@@ -277,11 +277,17 @@ const useStyles = makeStyles()((theme) => {
   return {
     mainContainer: {
       marginTop: "110px",
+      height: "660px",
+      overflow: "hidden",
+      [theme.breakpoints.down("md")]: {
+        height: "auto",
+      },
     },
     AboutUsTOpLeftGrid: {
       margin: "auto",
       padding: "20px 50px",
       [theme.breakpoints.down("md")]: {
+        margin: "40px 0",
         padding: "10px 20px",
       },
     },
@@ -335,8 +341,14 @@ const useStyles = makeStyles()((theme) => {
       },
     },
     midLeftGrid: {
-      margin: "auto 0",
       padding: "20px 50px",
+      margin: "160px 0",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      [theme.breakpoints.down("md")]: {
+        margin: "40px 0",
+      },
       [theme.breakpoints.down("sm")]: {
         padding: "0 25px",
         paddingTop: "30px",
@@ -365,10 +377,16 @@ const useStyles = makeStyles()((theme) => {
       },
     },
     visionLeft: {
-      margin: "auto 0",
       padding: "20px 50px",
+      margin: "160px 0",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
       [theme.breakpoints.down("lg")]: {
         order: 1,
+      },
+      [theme.breakpoints.down("md")]: {
+        margin: "40px 0",
       },
       [theme.breakpoints.down("sm")]: {
         padding: "0 25px",
@@ -443,7 +461,7 @@ const useStyles = makeStyles()((theme) => {
       padding: "60px 0",
       [theme.breakpoints.down("md")]: {
         padding: "30px 0",
-        width: '90%'
+        width: "90%",
       },
     },
     benefitContainer: {

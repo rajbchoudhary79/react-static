@@ -248,9 +248,9 @@ export default function ButtonAppBar() {
       <AppBar
         position="fixed"
         style={{
-          backgroundColor: scrolled ? "#fff" : "transparent",
+          backgroundColor: "#ffffff",
           boxShadow: scrolled ? "0px 2px 4px -1px rgba(0,0,0,0.4)" : "none",
-          padding: scrolled ? "10px" : "15px 10px",
+          padding: scrolled ? "10px" : "10px",
         }}
       >
         <Toolbar className={classes.toolbar}>
@@ -320,7 +320,6 @@ export default function ButtonAppBar() {
                       <ListItemText primary="Virtual Private Assistant" />
                     </ListItemButton>
                   </ListItem>
-                  <Divider />
                   <ListItem
                     disablePadding
                     onClick={() => handleNavigation("/healthcareservices")}
@@ -329,7 +328,6 @@ export default function ButtonAppBar() {
                       <ListItemText primary="Healthcare (VA) Medical Assistant" />
                     </ListItemButton>
                   </ListItem>
-                  <Divider />
                   <ListItem
                     disablePadding
                     onClick={() => handleNavigation("/salesdevelopment")}
@@ -421,7 +419,6 @@ export default function ButtonAppBar() {
                       <ListItemText primary="About US" />
                     </ListItemButton>
                   </ListItem>
-                  <Divider />
                 </List>
               </Popover>
               <Box
