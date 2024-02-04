@@ -1,19 +1,22 @@
-import { Box, Card, Container, Grid, Typography } from '@mui/material';
-import React from 'react'
-import { makeStyles } from 'tss-react/mui';
+import { Box, Card, Container, Grid, Typography } from "@mui/material";
+import React from "react";
+import { makeStyles } from "tss-react/mui";
 import { styles } from "../css/CommonCSS";
-import functions from '../../config/functions';
-import { useNavigate, useParams } from 'react-router-dom';
-import { pallete } from '../css/Theme';
+import functions from "../../config/functions";
+import { useNavigate, useParams } from "react-router-dom";
+import { pallete } from "../css/Theme";
 
 function BlogDetail() {
-    const { classes } = useStyles();
-    const navigate = useNavigate();
-    const {slug} = useParams()
-    const blog = functions.getBlogs(slug);
-    if(!blog){
-        navigate('/blogs')
-    }
+  const { classes } = useStyles();
+  const navigate = useNavigate();
+  const { slug } = useParams();
+  const blog = functions.getBlogs(slug);
+  if (!blog) {
+    navigate("/blogs");
+  }
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <>
       <Container maxWidth={false} className={classes.mainContainer}>
@@ -78,7 +81,7 @@ function BlogDetail() {
                 the potential of Virtual Assistants are not only staying ahead
                 of the curve but actively shaping the future of work.
               </Typography>
-              <Typography variant='body1'>
+              <Typography variant="body1">
                 In a world where adaptability is key, the transformative journey
                 of businesses with Virtual Assistants serves as an inspiration
                 for others to explore the boundless possibilities that lie
@@ -135,7 +138,7 @@ const useStyles = makeStyles()((theme) => {
         fontSize: "30px",
         margin: "20px 0",
         padding: "0 20px",
-        textAlign: "center"
+        textAlign: "center",
       },
     },
     mainGrid: {
