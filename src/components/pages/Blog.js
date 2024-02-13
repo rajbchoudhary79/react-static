@@ -12,10 +12,11 @@ import { makeStyles } from "tss-react/mui";
 import CardMedia from "@mui/material/CardMedia";
 import { pallete } from "../css/Theme";
 import functions from "../../config/functions";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const BlogPage = () => {
   const { classes } = useStyles();
+  const navigate = useNavigate();
 
   const blogs = functions.getBlogs();
 
@@ -86,7 +87,10 @@ const BlogPage = () => {
               key={index}
               sx={{ padding: "10px" }}
             >
-              <Card className={classes.blogCard}>
+              <Card
+                className={classes.blogCard}
+                onClick={() => navigate(`/blogs/${blog.slug}`)}
+              >
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -109,7 +113,12 @@ const BlogPage = () => {
                       component="div"
                       className={classes.blogTitle}
                     >
-                      <Link to={`/blogs/${blog.slug}`} style={{textDecoration: 'none'}}>{blog.title}</Link>
+                      <Link
+                        to={`/blogs/${blog.slug}`}
+                        style={{ textDecoration: "none" }}
+                      >
+                        {blog.title}
+                      </Link>
                     </Typography>
 
                     {/* Description */}
