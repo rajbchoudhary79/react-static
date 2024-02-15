@@ -23,7 +23,17 @@ const HealthCareServices = () => {
           image="assets/images/trans.jpg"
         />
       </Container>
-      <AboutSection />
+      <AboutSection
+        description={`We provide Translation and Interpretation Services that are essential for overcoming language
+barriers, enabling effective communication in a globalized world, and facilitating business
+expansion, international collaboration, and access to information in different languages. Our
+services include document translation, which involves accurately and coherently converting
+
+written documents such as reports, contracts, and manuals from one language to another. We
+also offer oral Interpretation Services, providing interpreters to facilitate real-time communication
+in meetings, conferences, phone calls, and live events. Additionally, we can help our clients
+create Standard Operating Procedure (SOP) manuals for internal use.`}
+      />
       <WhyOurServices />
       <BookDemo />
       <FaqSection />

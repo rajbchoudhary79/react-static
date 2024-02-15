@@ -37,20 +37,19 @@ const SalesDevelopment = () => {
       icon: <LeaderboardOutlinedIcon className={classes.icons2} />,
       heading: "Lead Management",
       description:
-        "Lead management involves acquiring, classifying, nurturing, and converting prospects into actual customers. Efficient lead management increases conversion rates, saves time, and fosters long-term customer loyalty.",
+        "Lead management is the process of acquiring, classifying, nurturing, and converting prospects into customers. It boosts conversion rates, saves time, and builds customer loyalty.",
     },
     {
       icon: <OutboundOutlinedIcon className={classes.icons2} />,
       heading: " Outbound Services",
       description:
-        "Outbound Services involve actively seeking potential customers, rather than waiting for them to approach you. You can use cold calls and direct email to reach out to key prospects. Using outbound services gives you greater control, speed up the sales process, and expand your reach.",
+        "Actively seek potential customers instead of waiting for them. Use cold calls and direct emails to reach key prospects. Gain control, speed up sales, and expand reach",
     },
     {
       icon: <ThumbUpOutlinedIcon className={classes.icons2} />,
       heading: "Sales Enablement",
-      description: `Sales Enablement significantly impacts your team's performance and success. Our Virtual Assistants automate tasks to free up the sales team for high-value activities. Additionally, we use tracking and analytics to evaluate the sales team's performance, identify areas for improvement, and optimize your sales strategy.
-      Implementing Sales Enablement increases salespeople's effectiveness and sales. It also helps to facilitate consistent message delivery and product or service presentation. Eliminating manual and tedious tasks saves time and enables the sales team to focus on selling. It helps to perfect your sales processes.
-      `,
+      description: `Our Virtual Assistants streamline tasks, track performance, and optimize strategies to enhance your
+team&#39;s effectiveness. Save time, focus on selling, and perfect your sales processes`,
     },
   ];
 
@@ -63,7 +62,14 @@ const SalesDevelopment = () => {
           image="assets/images/sales.jpg"
         />
       </Container>
-      <AboutSection />
+      <AboutSection
+        description={`Our Sales Virtual Assistants are the ultimate strategic allies in the world of sales excellence!
+With their meticulous prospect data building and expert lead management skills, our Virtual
+Assistants empower your team to achieve peak performance. They help you elevate your sales
+strategy, optimize lead workflows, and embrace a new era of efficiency. Transforming prospects
+into loyal customers has never been easier! Don&#39;t miss out on this opportunity to take your sales
+game to the next level with our Sales Virtual Assistants.`}
+      />
       <ServicesSection servicesData={servicesData} />
       <WhyOurServices />
       <BookDemo />

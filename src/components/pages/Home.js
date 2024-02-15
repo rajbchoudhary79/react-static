@@ -111,11 +111,7 @@ const Home = () => {
                   {banner.title}
                 </Typography>
                 <Typography className={classes.secondHeading}>
-                  Unleash the power of productivity and let us take care of the
-                  details while you focus on the big picture.
-                </Typography>
-                <Typography className={classes.secondHeading}>
-                  <b>Get Stuff Done! Your success is just a click away.</b>
+                  {banner.description}
                 </Typography>
               </Grid>
               <Grid item md={8} className={classes.columnsGridRight}>

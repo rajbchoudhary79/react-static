@@ -23,7 +23,14 @@ const HealthCareServices = () => {
           image="assets/images/rescption.jpg"
         />
       </Container>
-      <AboutSection />
+      <AboutSection
+        description={`Elevate your business with our state-of-the-art Virtual Receptionist Solutions. Our automated
+services are designed to greet your callers with a personalized touch and direct them efficiently
+to the right department or person. With our Virtual Assistant, you can ensure that no call goes
+unanswered. Experience the convenience of appointment scheduling, call forwarding, and
+message management, all tailored to suit your business needs. Embrace efficiency, enhance
+customer experience, and make every call count with our Virtual Receptionist Services.`}
+      />
       <WhyOurServices />
       <BookDemo />
       <FaqSection />

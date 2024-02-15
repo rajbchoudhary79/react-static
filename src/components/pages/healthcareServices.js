@@ -26,7 +26,7 @@ const HealthCareServices = () => {
       icon: <Diversity3OutlinedIcon className={classes.icons2} />,
       heading: "Patient Engagement",
       description:
-        "Our Virtual Medical Assistants promote effective communication, patient education and empowerment, treatment adherence, and accurate record-keeping and tracking. They play a vital role in helping patients understand their medical care and make informed decisions about their health.",
+        "Our Virtual Medical Assistants facilitate communication, educate patients, ensure treatment adherence, and maintain accurate records. They empower patients to understand their medical care and make informed health decisions",
     },
     {
       icon: <ManageAccountsOutlinedIcon className={classes.icons2} />,
@@ -44,13 +44,13 @@ const HealthCareServices = () => {
       icon: <PsychologyAltOutlinedIcon className={classes.icons2} />,
       heading: "Information Capture",
       description:
-        "Our Virtual Medical Assistant  expedites the collection of medical and administrative data. It asks patients questions about their medical information to ensure their electronic medical record is complete and up-to-date. It also schedules appointments and sends automated reminders to patients. ",
+        "Our Virtual Medical Assistant streamlines data collection, updates electronic medical records, schedules appointments, and sends reminders to patients.",
     },
     {
       icon: <OutboundOutlinedIcon className={classes.icons2} />,
       heading: "Outbound Lead Management",
       description:
-        "Introducing our Virtual Medical Assistant service, our assistant proactively identifies, communicates with, and nurtures potential leads who could become valuable patients or referrals. It also provides proactive follow-up after a patient's visit, such as sending thank-you emails and ensuring satisfaction.",
+        "Our Virtual Medical Assistant service proactively identifies, communicates with, and nurtures potential leads, while also providing follow-up after patient visits, ensuring satisfaction.",
     },
     {
       icon: <DomainVerificationOutlinedIcon className={classes.icons2} />,
@@ -69,7 +69,14 @@ const HealthCareServices = () => {
           image="assets/images/healts.jpg"
         />
       </Container>
-      <AboutSection />
+      <AboutSection
+        description={`Welcome to the future of healthcare support with our specialized Healthcare Virtual Assistants! Our
+advanced virtual assistants are designed to streamline your daily work. Whether it&#39;s capturing information
+or managing outbound leads, our virtual assistants have got you covered. With our assistance, you can
+easily verify insurance and eligibility checks, allowing your healthcare practice to operate smoothly. Our
+Healthcare Virtual Assistant is the perfect solution for the unique demands of the healthcare landscape,
+providing a comprehensive and efficient approach to medical operations.`}
+      />
       <ServicesSection servicesData={servicesData} />
       <WhyOurServices />
       <BookDemo />

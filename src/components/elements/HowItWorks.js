@@ -11,20 +11,20 @@ function HowItWorks() {
       label: "Discovery Call",
       title: "Step 1",
       icon: "assets/images/group.png",
-      description: `To get started with finding the perfect assistant for you, you can join a Discovery Call with our sales team. During this call, you can discuss your requirements and they will help you identify the ideal assistant for your specific needs. `,
+      description: `Join our sales team for a personalized discussion to find your perfect assistant. Share your requirements and let us help you find the ideal match.`,
     },
     {
       label: "Get The Perfect Match",
       title: "Step 2",
       icon: "assets/images/group2.png",
       description:
-        "Our team will work diligently to pair you with the perfect assistant. We have a deep network of highly qualified professionals and we are confident in our ability to assign the ideal team member for the job or recruit a new applicant with the desired profile. You can trust us to provide top-notch service.",
+        "Trust our team to match you with the perfect assistant. With a vast network of qualified professionals, we're confident in our ability to find the right fit for your needs. Count on us for top-notch service.",
     },
     {
       label: "Initiate",
       title: "Step 3",
       icon: "assets/images/group3.png",
-      description: `Facilitate the onboarding process for your virtual assistant and begin task assignments. Our administration team oversees productivity through time and performance monitoring software, conducting regular feedback sessions.`,
+      description: `Start onboarding your virtual assistant and assign tasks. Our admin team ensures productivity with time and performance monitoring, plus regular feedback sessions.`,
     },
   ];
   const { classes } = useStyles();

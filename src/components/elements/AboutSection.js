@@ -3,7 +3,7 @@ import React from 'react'
 import { makeStyles } from 'tss-react/mui';
 import { pallete } from '../css/Theme';
 
-function AboutSection() {
+function AboutSection({description}) {
 const { classes } = useStyles();
 
   return (
@@ -17,7 +17,8 @@ const { classes } = useStyles();
         <Grid item md={12}>
           <Card className={classes.about}>
             <Typography variant="h6">
-              Discover the transformative power of hiring a virtual assistant!
+              {description ||
+                `Discover the transformative power of hiring a virtual assistant!
               Unlock a realm of benefits, where decreased employment costs,
               soaring productivity, and the gift of reclaimed time become your
               daily reality. Imagine slashing costs by up to 70%, gaining
@@ -27,7 +28,7 @@ const { classes } = useStyles();
               can master. Moreover, this isn't just a cost-effective solution;
               it's the key to scaling your business effortlessly, without the
               burden of costly office space or equipment. Embrace sustainable
-              growth, and let a virtual assistant redefine the way you work!
+              growth, and let a virtual assistant redefine the way you work!`}
             </Typography>
           </Card>
         </Grid>

@@ -69,7 +69,15 @@ const SocialMediaManagement = () => {
           image="assets/images/manage.jpg"
         />
       </Container>
-      <AboutSection />
+      <AboutSection
+        description={`The key to unlocking social media success! Elevate your online presence with the help of our Virtual
+Assistant who excels in boosting engagement and ensuring that your social media strategy is both
+dynamic and impactful. You can expect a strategy analysis that fine-tunes your approach for optimal
+results. Our Virtual Assistant offers seamless content management and a concierge service that includes
+content auditing, making it your all-in-one solution for navigating the dynamic landscape of social media.
+Elevate your brand, captivate your audience, and dominate the social media sphere with our expert
+services.`}
+      />
       <ServicesSection servicesData={servicesData} />
       <WhyOurServices />
       <BookDemo />

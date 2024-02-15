@@ -26,35 +26,35 @@ const Services = () => {
       heading: `Efficiently Manage Your Schedule`,
       background: "assets/background/blob-scene-1.svg",
       description:
-        "Our virtual assistant will ensure that your commitments, important meetings, and crucial tasks are impeccably, in your calendar and will strategically schedule your meetings to avoid scheduling conflicts. You can trust that your virtual assistant will pay attention to the details so you can focus on what truly matters: growing your business. Have a personal assistant at your disposal to make your life easier.",
+        "Let us handle your calendar, meetings, and tasks seamlessly. Our Virtual Assistants ensure no conflicts, strategically schedule meetings, and pay attention to detail, freeing you to focus on business growth. Experience the ease of having a personal assistant at your service.",
     },
     {
       icon: <MailOutlinedIcon className={classes.icons2} />,
       heading: "Streamline Email and Communication",
       background: "assets/background/blob-scene.svg",
       description:
-        "Gain control of your communication process with our Virtual Assistants. It can organize your inbox, prioritize tasks, schedule meetings and calls, manage phone calls and business chats, and follow up with clients. Save time and experience the benefits of efficient communication today.",
+        "Let our Virtual Assistants take charge of your email and communication tasks. From organizing your inbox to scheduling meetings and following up with clients, we&#39;ve got you covered. Save time and enjoy seamless communication today!",
     },
     {
       icon: <RocketLaunchOutlinedIcon className={classes.icons2} />,
       heading: "Proactively Manage Tasks",
       background: "assets/background/blob.svg",
       description:
-        "With our Virtual Assistants, you get a reliable helper that proactively manages tasks, anticipates your needs, and ensures everything runs smoothly. Deadlines are met, important dates are remembered, and events and meetings are scheduled without a hitch. Say goodbye to scheduling conflicts and hello to a stress-free workday.",
+        "Our Virtual Assistants proactively manage tasks, anticipate your needs, and ensure smooth operations. Say goodbye to scheduling conflicts and hello to a stress-free workday.",
     },
     {
       icon: <EventAvailableOutlinedIcon className={classes.icons2} />,
       heading: "Coordinate Travel and Events",
       background: "assets/background/blurry-gradient.svg",
       description:
-        "Our virtual assistant can coordinate your travel and events. It can find and book flights, hotels, and ground transportation based on your preferences. For events, it can book venues, coordinate schedules, manage RSVPs, and provide reminders. It can also keep track of recurring events to ensure that everything runs smoothly.",
+        "Our virtual assistant handles all aspects of travel and event planning, from booking flights and hotels to coordinating schedules and managing RSVPs. Let us take care of the details so you can focus on what matters most",
     },
     {
       icon: <AssessmentOutlinedIcon className={classes.icons2} />,
       heading: "Research and Reporting",
       background: "assets/background/circle-scatter.svg",
       description:
-        "Gain a competitive advantage with our researchers who provide valuable information for strategic decision-making. They conduct thorough research, analyze local competition, assess market trends, and gather relevant demographic data, all presented in clear concise reports. This function also helps monitor the effectiveness of your business strategies. Gain a data-driven view of your business environment with our research and reporting function.",
+        "Gain a competitive edge with our research team. They analyze market trends, assess competition, and deliver concise reports for strategic decision-making. Monitor business strategies effectively with data- driven insights.",
     },
     {
       icon: <ManageAccountsOutlinedIcon className={classes.icons2} />,
