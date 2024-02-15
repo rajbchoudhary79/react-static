@@ -47,7 +47,7 @@ const BlogPage = () => {
           <Grid item md={7} className={classes.columnsGridRight}>
             <img
               alt="boy"
-              src="assets/images/blogPage/image2girl1boy.png"
+              src="assets/images/blogPage/image2girl1boy.jpg"
               className={classes.homemenImg}
             />
           </Grid>
@@ -138,7 +138,7 @@ const BlogPage = () => {
       <Box sx={{ position: "relative", width: "100%" }}>
         {/* Background Image */}
         <img
-          src="assets/images/blogPage/section3img.jpg"
+          src="assets/images/blogPage/section3img.png"
           alt="water"
           style={{ objectFit: "cover", width: "100%" }}
         />
@@ -223,8 +223,9 @@ const useStyles = makeStyles()((theme) => {
     mainContainer: {
       marginTop: "110px",
       height: "660px",
-      background: "linear-Gradient(180deg,#DECAF4 0%,#EDC9DB 100%)",
-      backgroundColor: "linear-gradint(180deg,#DECAF4 0%,#EDC9DB 100%)",
+      background: "#EDC9DB",
+      // background: "linear-Gradient(180deg,#DECAF4 0%,#EDC9DB 100%)",
+      // backgroundColor: "linear-gradint(180deg,#DECAF4 0%,#EDC9DB 100%)",
       [theme.breakpoints.down("lg")]: {
         height: "auto",
       },
@@ -282,10 +283,22 @@ const useStyles = makeStyles()((theme) => {
       margin: "20px 0px",
     },
     columnsGridRight: {
-      display: "flex",
-      flexDirection: "center",
-      alignItems: "center",
-      padding: "50px 0",
+      height: "100%",
+      position: "relative",
+      [theme.breakpoints.up("md")]: {
+        "&:before": {
+          content: '""',
+          backgroundImage:
+            "linear-gradient(to right, rgb(237 201 219), rgb(225 202 240 / 0%))",
+          position: "absolute",
+          height: "100%",
+          width: "200px",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          zIndex: 1,
+        },
+      },
       [theme.breakpoints.down("lg")]: {
         padding: 0,
       },
@@ -300,7 +313,7 @@ const useStyles = makeStyles()((theme) => {
       },
     },
     homemenImg: {
-      width: "100%",
+      height: "100%",
       objectFit: "cover",
     },
   };
